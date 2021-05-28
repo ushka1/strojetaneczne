@@ -1,0 +1,83 @@
+:root {
+  --white1: #ffffff;
+  --white2: #ebeaef;
+  --purple1: #a73b7c;
+  --purple2: #e4b4d1;
+
+  --green1: #1dd1a1;
+  --green2: #10ac84;
+  // --green2: #097a5e;
+
+  --red1: #ff6b6b;
+  --red2: #ee5253;
+}
+
+$breakpoints: (
+  'verysmall': 22em,
+  'small': 45em,
+  'medium': 60em,
+  'big': 80em,
+  'huge': 100em,
+) !default;
+
+@mixin respond($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+$breakpointsVert: (
+  'medium': 50em,
+  'small': 30em,
+) !default;
+
+@mixin respondVert($breakpointVert) {
+  @if map-has-key($breakpointsVert, $breakpointVert) {
+    @media (max-height: map-get($breakpointsVert, $breakpointVert)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpointVert}`. "
+        + "Available breakpoints are: #{map-keys($breakpointsVert)}.";
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@include respond('medium') {
+  @keyframes slideLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(10%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0%);
+    }
+  }
+}

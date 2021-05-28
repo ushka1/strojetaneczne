@@ -1,0 +1,13 @@
+@import '../../../utility.scss';
+
+.Heading {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  outline: 3px solid var(--purple1);
+  outline-offset: 5px;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: white;
+  background-color: var(--purple1);
+  text-align: center;
+}

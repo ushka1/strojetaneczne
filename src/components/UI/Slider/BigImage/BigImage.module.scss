@@ -1,0 +1,55 @@
+@import '../../../../utility.scss';
+
+.BigImage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: brightness(0.2) blur(2px);
+  animation: showUp 0.2s ease-out both;
+  opacity: 1;
+
+  div {
+    position: relative;
+  }
+
+  img {
+    min-height: 90vh;
+    max-width: 90vw;
+    object-fit: cover;
+
+    @include respond('small') {
+      max-height: 90vh;
+      min-height: unset;
+    }
+  }
+
+  p {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 1rem;
+    z-index: 150;
+    color: white;
+    font-size: 3.5rem;
+    line-height: 0.75;
+    cursor: pointer;
+    font-weight: 600;
+    background-color: rgba(black, 0.35);
+  }
+}
+
+@keyframes showUp {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}

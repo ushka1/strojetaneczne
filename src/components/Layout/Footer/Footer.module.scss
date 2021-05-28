@@ -1,0 +1,70 @@
+@import '../../../utility.scss';
+
+.Footer {
+  padding: 2.5rem 2rem;
+  background-color: var(--purple1);
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    @include respond('small') {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  .Info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    line-height: 2 !important;
+
+    .Contact {
+      margin-right: 10rem;
+      color: var(--white1);
+      list-style: none;
+
+      @include respond('small') {
+        margin-right: 0;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+
+        @include respond('small') {
+          padding: 0.75rem;
+        }
+
+        svg {
+          margin-right: 0.75rem;
+          fill: white;
+        }
+
+        a {
+          color: var(--white1) t;
+        }
+      }
+    }
+  }
+}
+
+.Links {
+  list-style: none;
+  column-count: 3;
+  a {
+    color: var(--white1) !important;
+    text-decoration: none;
+  }
+
+  @include respond('small') {
+    display: none;
+  }
+}

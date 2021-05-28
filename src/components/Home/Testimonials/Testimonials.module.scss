@@ -1,0 +1,53 @@
+@import '../../../utility.scss';
+
+.Testimonials {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 0;
+
+  @include respond('small') {
+    padding: 5rem 0;
+  }
+
+  background-color: var(--white2);
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    list-style: none;
+    margin-top: 5rem;
+    animation-duration: 0.75s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    opacity: 0;
+
+    & > * {
+      max-width: 32%;
+    }
+
+    @include respond(medium) {
+      width: 90%;
+    }
+    @include respond('small') {
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      opacity: 1;
+
+      & > * {
+        max-width: 90%;
+
+        &:not(:last-child) {
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+}
+
+.Small {
+  opacity: 1 !important;
+}

@@ -1,0 +1,7 @@
+@import '../../../../utility.scss';
+
+.Navigation {
+  @include respond('small') {
+    display: none;
+  }
+}

@@ -1,0 +1,144 @@
+@import '../../../utility.scss';
+
+.Container {
+  padding-top: 7rem;
+
+  @include respond('small') {
+    padding-top: 7rem;
+  }
+
+  h1 {
+    display: block;
+    width: fit-content;
+    margin: 5rem auto 0 auto;
+
+    @include respond('small') {
+      margin-top: calc(7rem + 5rem);
+    }
+  }
+
+  button {
+    display: block;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+
+    @include respond('small') {
+      margin-top: 2rem;
+    }
+  }
+}
+
+.Helper {
+  display: none;
+  text-align: center;
+  margin: auto;
+  color: var(--purple1);
+  font-weight: 600;
+  font-size: 2rem;
+
+  @include respond('small') {
+    margin-top: 3rem;
+    display: block;
+  }
+}
+
+@import '../../../utility.scss';
+
+.Admin {
+  padding-top: 3rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+
+  @include respond('small') {
+    padding: 0 1rem 5rem 1rem;
+    align-items: unset;
+    overflow-x: scroll;
+  }
+
+  button {
+    margin-top: 5rem;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  .Table {
+    min-width: 700px;
+    list-style: none;
+
+    li {
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+        @include respond('big') {
+          margin-bottom: 2.5rem;
+        }
+      }
+
+      p {
+        display: inline-block;
+        align-items: center;
+        width: 30rem;
+        font-size: 1.8rem;
+        text-align: start;
+
+        @include respond('huge') {
+          width: 25rem;
+          font-size: 1.6rem;
+        }
+        @include respond('big') {
+          display: block;
+        }
+      }
+
+      input {
+        display: inline-block;
+        font-size: 1.6rem;
+        padding: 1rem 0.5rem;
+        width: 7rem;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 2px;
+        height: 6rem;
+        vertical-align: middle;
+        text-align: center;
+
+        @media screen and (max-width: 90em) {
+          font-size: 1.6rem;
+          padding: 0.75rem 0.5rem;
+          width: 5rem;
+          text-align: center;
+        }
+
+        &:nth-child(even) {
+          background-color: var(--white2);
+        }
+
+        &:not(:last-child) {
+          margin-right: 1rem;
+        }
+
+        &:focus {
+          outline-color: var(--purple1);
+          background-color: var(--purple1);
+          color: var(--white1);
+          font-weight: 600;
+        }
+      }
+
+      &:first-of-type {
+        p {
+          font-weight: bold;
+          color: var(--purple1);
+        }
+        input {
+          border: none;
+          background-color: transparent;
+          font-weight: bold;
+          color: var(--purple1);
+        }
+      }
+    }
+  }
+}

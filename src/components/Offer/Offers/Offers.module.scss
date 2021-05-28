@@ -1,0 +1,68 @@
+@import '../../../utility.scss';
+
+.Offers {
+  --gap: 3rem;
+  --height: 60rem;
+
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-row-gap: var(--gap);
+  grid-column-gap: var(--gap);
+  grid-auto-rows: var(--height);
+
+  width: 55%;
+  padding-top: var(--gap);
+  padding-bottom: 4rem;
+  margin: auto;
+  list-style: none;
+
+  @supports (not (display: grid)) {
+    display: block;
+    column-count: 3;
+
+    @include respond('small') {
+      column-count: 1;
+    }
+
+    li {
+      height: 50rem;
+      margin-bottom: 3rem;
+
+      @include respond('medium') {
+        height: 40rem;
+      }
+
+      @include respond('small') {
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3rem;
+        width: 35rem;
+        height: 60rem;
+        max-width: 90%;
+      }
+    }
+  }
+
+  @include respond('huge') {
+    --gap: 2rem;
+    width: 65%;
+  }
+  @include respond('big') {
+    width: 75%;
+  }
+  @include respond('medium') {
+    --height: 70rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond('small') {
+    --gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    max-width: 35rem;
+    grid-auto-rows: 60rem;
+  }
+  @include respond('verysmall') {
+    grid-auto-rows: 45rem;
+    max-width: 25rem;
+  }
+}

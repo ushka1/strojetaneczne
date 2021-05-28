@@ -1,0 +1,35 @@
+@import '../../../../utility.scss';
+
+.Testimonial {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  text-align: center;
+
+  img {
+    height: 12rem;
+    width: 12rem;
+    border-radius: 100%;
+    object-fit: cover;
+    border: 3px solid var(--purple1);
+    margin-bottom: 0.75rem;
+
+    @include respond('medium') {
+      border-width: 2px;
+    }
+    @include respond('small') {
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  p:first-of-type {
+    color: var(--purple1);
+    margin-bottom: 1.25rem;
+    font-weight: 500;
+    font-size: 1.8rem;
+
+    @include respond('small') {
+      margin-bottom: 0.75rem;
+    }
+  }
+}

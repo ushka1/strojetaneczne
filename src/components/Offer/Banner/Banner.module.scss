@@ -1,0 +1,92 @@
+@import '../../../utility.scss';
+
+.Banner {
+  --animation: slideIn 1s ease-out both;
+  --delay1: 0s;
+  --delay2: 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-flow: column;
+  height: 35vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(#ebeaef, 0.85), rgba(#ebeaef, 0.85)),
+    url('../../../assets/images/background/stroje_do_tanca.jpg');
+  background-position: 50% 70%;
+  background-size: cover;
+  padding: 0 1rem;
+
+  @include respond('big') {
+    background-position: 50% 50%;
+    height: 30vh;
+  }
+  @include respond('medium') {
+    background-position: 50% 40%;
+    height: 25vh;
+  }
+  @include respond('small') {
+    background-position: 50% 30%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 6.5rem;
+    animation: var(--animation);
+    animation-delay: var(--delay1);
+
+    @include respondVert('medium') {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    @include respond('big') {
+      font-size: 5rem;
+    }
+    @include respond('small') {
+      font-size: 4rem;
+    }
+    @include respond('verysmall') {
+      font-size: 3rem;
+    }
+
+    @include respondVert('small') {
+      font-size: 3rem;
+    }
+  }
+  h3 {
+    text-align: center;
+    font-size: 3rem;
+    animation: var(--animation);
+    animation-delay: var(--delay2);
+    color: var(--purple1);
+
+    @include respondVert('medium') {
+      font-size: 2rem;
+    }
+
+    @include respond('big') {
+      font-size: 2.5rem;
+    }
+    @include respond('small') {
+    }
+    @include respond('verysmall') {
+      font-size: 1.8rem;
+    }
+
+    @include respondVert('small') {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,53 @@
+@import '../../utility.scss';
+
+.Form {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15rem;
+  margin-top: 8rem;
+
+  @include respond('small') {
+    margin-top: 7rem;
+  }
+
+  input {
+    width: 30rem;
+    padding: 1rem;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    border: 1px solid black;
+    border-radius: 2px;
+
+    &:focus {
+      outline-color: var(--purple1);
+      background-color: var(--white2) !important;
+    }
+
+    &:nth-child(4) {
+      margin-bottom: 6rem;
+    }
+  }
+
+  button {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}
+
+.Logged {
+  text-align: center;
+  margin-top: 20rem;
+
+  h1 {
+    font-size: 4rem;
+    margin-bottom: 15rem;
+  }
+
+  button {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+  }
+}

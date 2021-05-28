@@ -1,0 +1,48 @@
+@import '../../../utility.scss';
+
+.Sizer {
+  display: inline-block;
+  border: 1px solid var(--purple1);
+  padding: 2rem;
+
+  @include respond('medium') {
+    width: 100%;
+    order: -1;
+    margin-bottom: 5rem;
+  }
+
+  .Wrapper {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .Title {
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--purple1);
+    margin-bottom: 2rem;
+  }
+
+  .Subtitle {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  .Price {
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--purple1);
+  }
+
+  select {
+    color: var(--purple1);
+    font-size: 2rem;
+
+    option {
+      color: var(--purple1);
+    }
+  }
+}

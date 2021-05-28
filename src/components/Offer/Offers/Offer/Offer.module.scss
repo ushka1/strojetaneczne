@@ -1,0 +1,90 @@
+@import '../../../../utility.scss';
+
+.Offer {
+  display: flex;
+  flex-flow: column;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 3px 3px 9px rgba(black, 0.25);
+  transition: 0.2s ease-out;
+  cursor: pointer;
+
+  @include respond('small') {
+    box-shadow: 0px 6px 9px rgba(black, 0.25);
+  }
+
+  .Image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      transition: 0.25s ease-out;
+
+      &:nth-child(1) {
+        opacity: 1;
+      }
+      &:nth-child(2) {
+        opacity: 0;
+      }
+    }
+
+    h3 {
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      background: rgba(white, 0.9);
+      color: black;
+      text-transform: lowercase;
+      font-size: 2.2rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 6px 6px 18px rgba(black, 0.25);
+
+      .Image {
+        img {
+          &:nth-child(1) {
+            opacity: 0;
+          }
+          &:nth-child(2) {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  h3 {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 12.5%;
+    line-height: 1;
+    font-size: 2rem;
+
+    @include respond('medium') {
+      font-size: 1.8rem;
+    }
+    @include respond('small') {
+      padding: 0 1.5rem;
+    }
+    @include respond('verysmall') {
+      padding: 0 1rem;
+      font-size: 1.6rem;
+    }
+  }
+}

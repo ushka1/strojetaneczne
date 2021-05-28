@@ -1,0 +1,93 @@
+@import '../../../utility.scss';
+
+.Presentation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10rem 2rem;
+
+  @include respond(small) {
+    flex-flow: column;
+    padding: 5rem 5rem;
+  }
+}
+
+.Article {
+  ul {
+    margin-top: 1.25rem;
+    list-style: none;
+    margin-left: 3rem;
+    @include respond('small') {
+      margin-left: 0;
+    }
+
+    & > * {
+      text-align: start;
+      margin-bottom: 1rem;
+
+      span {
+        font-weight: 600;
+        color: var(--purple1);
+      }
+
+      @include respond('medium') {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &:nth-child(5) {
+      & > * {
+        @include respond('medium') {
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  opacity: 0;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: both;
+
+  @include respond('medium') {
+    max-width: 60%;
+  }
+  @include respond('small') {
+    text-align: center;
+    max-width: 100%;
+    opacity: 1;
+  }
+}
+
+.Small {
+  opacity: 1;
+}
+
+.Slider {
+  width: 40rem;
+  height: 60rem;
+  margin-right: 15rem;
+
+  @include respond('big') {
+    margin-right: 10rem;
+  }
+  @include respond('medium') {
+    margin-right: 5rem;
+  }
+  @include respond('small') {
+    margin-right: 0;
+    margin-bottom: 5rem;
+    width: 35rem;
+    height: 50rem;
+  }
+}
+
+.Breakpoint {
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+}
+
+.ImportantInfo {
+  font-weight: 500;
+  text-decoration: underline;
+  color: var(--purple1);
+}

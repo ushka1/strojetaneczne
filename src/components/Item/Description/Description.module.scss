@@ -1,0 +1,21 @@
+@import '../../../utility.scss';
+
+.Description {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+
+  .Paragraph {
+    white-space: pre-wrap;
+
+    &:not(:last-child) {
+      margin-bottom: 2rem;
+    }
+
+    // @include respond('medium') {
+    //   &:nth-child(5) {
+    //     margin-bottom: 0;
+    //   }
+    // }
+  }
+}

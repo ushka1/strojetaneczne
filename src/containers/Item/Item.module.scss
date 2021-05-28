@@ -1,0 +1,121 @@
+@import '../../utility.scss';
+
+.Item {
+  height: 100%;
+
+  .Back {
+    position: absolute;
+    top: calc(8rem + 1rem);
+    left: 2rem;
+    font-size: 2rem;
+    text-decoration: underline;
+    color: var(--purple1);
+    cursor: pointer;
+
+    @include respond('medium') {
+      top: calc(8rem + 0.5rem);
+      left: 1rem;
+    }
+    @include respond('small') {
+      display: none;
+    }
+  }
+
+  h1 {
+    display: block;
+    width: fit-content;
+    max-width: 900px;
+    margin: 5rem auto 0 auto;
+    @include respond('small') {
+      max-width: 90%;
+    }
+  }
+
+  .Wrapper {
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    @include respond('big') {
+      padding: 5rem 2.5rem;
+    }
+
+    @include respond('medium') {
+      flex-flow: column;
+      align-items: center;
+    }
+
+    @include respond('small') {
+      padding: 5rem 1rem;
+    }
+  }
+
+  article {
+    width: 50%;
+
+    @include respond('medium') {
+      margin-top: 5rem;
+      width: 80%;
+    }
+    @include respond('small') {
+      margin-top: 5rem;
+      width: 90%;
+    }
+  }
+
+  .Slider {
+    position: relative;
+    display: flex;
+    height: 70rem;
+    width: 55rem;
+    min-width: 55rem;
+    margin-right: 10rem;
+    max-width: 100%;
+
+    @include respond('huge') {
+      margin-right: 5rem;
+    }
+    @include respond('big') {
+      margin-right: 3rem;
+      height: 65rem;
+      width: 50rem;
+      min-width: 45rem;
+    }
+
+    @include respond('medium') {
+      margin-right: 0;
+    }
+    @include respond('small') {
+      height: 65rem;
+      width: 40rem;
+      min-width: 40rem;
+
+      flex-flow: column;
+    }
+    @include respond('verysmall') {
+      height: 55rem;
+      width: 35rem;
+      min-width: 35rem;
+    }
+
+    div {
+      box-shadow: none;
+
+      div {
+        transition-duration: 0.3s;
+      }
+    }
+  }
+
+  animation: appear 0.2s ease-in-out both;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

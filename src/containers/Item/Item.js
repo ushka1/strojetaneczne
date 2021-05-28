@@ -99,6 +99,7 @@ class Item extends React.Component {
             <Slider
               class={styles.Slider}
               controlled={true}
+              alt={name.replaceAll('_', ' ')}
               images={images}
               small={images}
             ></Slider>

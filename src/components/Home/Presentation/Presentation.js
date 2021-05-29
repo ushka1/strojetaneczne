@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Presentation.module.scss';
 
-import sliderImages from '../../../assets/images/slider/images';
+import { getSliderImages } from '../../../utility/imagePath';
 import Slider from '../../UI/Slider/Slider';
 import Heading from '../../UI/Heading/Heading';
 
@@ -35,13 +35,19 @@ class Presentation extends React.Component {
   };
 
   render() {
+    const sliderImages = getSliderImages();
+
     return (
       <section
         id='presentation'
         className={styles.Presentation}
         ref={this.articleRef}
       >
-        <Slider class={styles.Slider} images={sliderImages}></Slider>
+        <Slider
+          alt='stroj taneczny'
+          class={styles.Slider}
+          images={sliderImages}
+        ></Slider>
         <article className={styles.Article} ref={this.textRef}>
           <Heading>W naszej ofercie znajdują się:</Heading>
           <ul>

@@ -97,6 +97,10 @@ module.exports = {
           from: 'src/assets/images/items',
           to: 'static/media/items',
         },
+        {
+          from: 'src/assets/images/slider',
+          to: 'static/media/slider',
+        },
       ],
     }),
     new Dotenv(),

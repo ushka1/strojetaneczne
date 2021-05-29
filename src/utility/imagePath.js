@@ -97,3 +97,11 @@ export function getImagePath(id, idx) {
     alt: name,
   };
 }
+
+export function getSliderImages() {
+  const res = [];
+  for (let i = 0; i <= 8; i++) {
+    res.push(`/static/media/slider/stroj_taneczny_${i}.jpg`);
+  }
+  return res;
+}

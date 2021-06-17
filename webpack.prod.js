@@ -1,6 +1,8 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common');
 
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = merge(
@@ -10,6 +12,7 @@ module.exports = merge(
     optimization: {
       minimizer: ['...', new CssMinimizerPlugin()],
     },
+    plugins: [new BundleAnalyzerPlugin()],
   },
   common,
 );

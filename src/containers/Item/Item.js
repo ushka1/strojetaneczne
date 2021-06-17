@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Item.module.scss';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { Helmet } from 'react-helmet';
 
 import Heading from '../../components/UI/Heading/Heading';
 import Spinner from '../../components/UI/Spinner/Spinner';
@@ -110,12 +111,20 @@ class Item extends React.Component {
     }
 
     return (
-      <section className={styles.Item}>
-        <p onClick={() => this.props.history.goBack()} className={styles.Back}>
-          &laquo; Powrót
-        </p>
-        {content}
-      </section>
+      <>
+        <Helmet>
+          <title>{this.state?.data?.description?.title}</title>
+        </Helmet>
+        <section className={styles.Item}>
+          <p
+            onClick={() => this.props.history.goBack()}
+            className={styles.Back}
+          >
+            &laquo; Powrót
+          </p>
+          {content}
+        </section>
+      </>
     );
   }
 }

@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import Banner from '../../components/Offer/Banner/Banner';
 import Offers from '../../components/Offer/Offers/Offers';
 import Item from '../Item/Item';
+import { Helmet } from 'react-helmet';
 
 import * as actions from '../../Store/Actions/Index';
 
@@ -17,15 +18,20 @@ class Offer extends React.Component {
 
   render() {
     return (
-      <section className={styles.Offer}>
-        <Route path='/oferta/:id'>
-          <Item></Item>
-        </Route>
-        <Route path='/oferta' exact>
-          <Banner></Banner>
-          <Offers></Offers>
-        </Route>
-      </section>
+      <>
+        <Helmet>
+          <title>Stroje Taneczne - oferta</title>
+        </Helmet>
+        <section className={styles.Offer}>
+          <Route path='/oferta/:id'>
+            <Item></Item>
+          </Route>
+          <Route path='/oferta' exact>
+            <Banner></Banner>
+            <Offers></Offers>
+          </Route>
+        </section>
+      </>
     );
   }
 }

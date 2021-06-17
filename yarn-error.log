@@ -1,8 +1,8 @@
 Arguments: 
-  D:\Program Files\Node\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js publish
+  D:\Program Files\Node\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-helmet
 
 PATH: 
-  C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Program Files\Git\cmd;D:\Program Files\Node\;C:\Users\David\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\David\AppData\Local\Programs\Python\Python39\;C:\Users\David\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\Program Files\Node;D:\Program Files\MongoDB\Server\4.4\bin;D:\Program Files\XAMPP\php;C:\Users\David\AppData\Local\Yarn\bin;C:\Program Files\heroku\bin;C:\Users\David\AppData\Roaming\npm
+  C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Yarn\bin\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Program Files\Git\cmd;D:\Program Files\Node\;D:\Program Files\jdk-16.0.1\bin;D:\Program Files\Git\bin;C:\Users\David\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\David\AppData\Local\Programs\Python\Python39\;C:\Users\David\AppData\Local\Microsoft\WindowsApps;D:\Microsoft VS Code\bin;D:\Program Files\Node;D:\Program Files\MongoDB\Server\4.4\bin;D:\Program Files\XAMPP\php;C:\Users\David\AppData\Local\Yarn\bin;C:\Program Files\heroku\bin;C:\Users\David\AppData\Roaming\npm;D:\Microsoft VS Code Insiders\Microsoft VS Code Insiders\bin
 
 Yarn version: 
   1.22.5
@@ -14,28 +14,18 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: canceled
-      at Interface.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:137009:13)
-      at Interface.emit (node:events:365:28)
-      at Interface._ttyWrite (node:readline:1069:16)
-      at ReadStream.onkeypress (node:readline:288:10)
-      at ReadStream.emit (node:events:365:28)
-      at emitKeys (node:internal/readline/utils:358:14)
-      at emitKeys.next (<anonymous>)
-      at ReadStream.onData (node:internal/readline/emitKeypressEvents:61:36)
-      at ReadStream.emit (node:events:365:28)
-      at addChunk (node:internal/streams/readable:314:12)
+  Error: EBUSY: resource busy or locked, copyfile 'C:\Users\David\AppData\Local\Yarn\Cache\v6\npm-typescript-4.3.2-399ab18aac45802d6f2498de5054fcbbe716a805-integrity\node_modules\typescript\lib\tsc.js' -> 'D:\Projects\my_projects\ann_dance_studio\node_modules\typescript\lib\tsc.js'
 
 npm manifest: 
   {
-    "name": "ann_dance_studio",
+    "name": "strojetaneczne",
     "version": "1.0.1",
     "main": "index.js",
     "license": "MIT",
     "scripts": {
       "start": "webpack serve --config ./webpack.dev.js",
       "build": "webpack --config ./webpack.prod.js",
-      "publish": "firebase deploy"
+      "deploy": "firebase deploy"
     },
     "dependencies": {
       "@babel/core": "^7.14.3",
@@ -43,6 +33,7 @@ npm manifest:
       "@babel/plugin-syntax-dynamic-import": "^7.8.3",
       "@babel/preset-env": "^7.14.2",
       "@babel/preset-react": "^7.13.13",
+      "@babel/register": "^7.13.16",
       "@svgr/webpack": "^5.5.0",
       "axios": "^0.21.1",
       "babel-eslint": "^10.1.0",
@@ -992,6 +983,17 @@ Lockfile:
       "@babel/plugin-transform-react-jsx" "^7.13.12"
       "@babel/plugin-transform-react-jsx-development" "^7.12.17"
       "@babel/plugin-transform-react-pure-annotations" "^7.12.1"
+  
+  "@babel/register@^7.13.16":
+    version "7.13.16"
+    resolved "https://registry.yarnpkg.com/@babel/register/-/register-7.13.16.tgz#ae3ab0b55c8ec28763877383c454f01521d9a53d"
+    integrity sha512-dh2t11ysujTwByQjXNgJ48QZ2zcXKQVdV8s0TbeMI0flmtGWCdTwK9tJiACHXPLmncm5+ktNn/diojA45JE4jg==
+    dependencies:
+      clone-deep "^4.0.1"
+      find-cache-dir "^2.0.0"
+      make-dir "^2.1.0"
+      pirates "^4.0.0"
+      source-map-support "^0.5.16"
   
   "@babel/runtime@^7.1.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
     version "7.14.0"
@@ -4611,6 +4613,15 @@ Lockfile:
       statuses "~1.5.0"
       unpipe "~1.0.0"
   
+  find-cache-dir@^2.0.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-2.1.0.tgz#8d0f94cd13fe43c6c7c261a0d86115ca918c05f7"
+    integrity sha512-Tq6PixE0w/VMFfCgbONnkiQIVol/JJL7nRMi20fqzA4NRs9AfeqMGeRdPi3wIhYkxjeBaWh2rxwapn5Tu3IqOQ==
+    dependencies:
+      commondir "^1.0.1"
+      make-dir "^2.0.0"
+      pkg-dir "^3.0.0"
+  
   find-cache-dir@^3.3.1:
     version "3.3.1"
     resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-3.3.1.tgz#89b33fad4a4670daa94f855f7fbe31d6d84fe880"
@@ -6689,6 +6700,14 @@ Lockfile:
     dependencies:
       es5-ext "~0.10.2"
   
+  make-dir@^2.0.0, make-dir@^2.1.0:
+    version "2.1.0"
+    resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-2.1.0.tgz#5f0310e18b8be898cc07009295a30ae41e91e6f5"
+    integrity sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==
+    dependencies:
+      pify "^4.0.1"
+      semver "^5.6.0"
+  
   make-dir@^3.0.0, make-dir@^3.0.2, make-dir@^3.1.0:
     version "3.1.0"
     resolved "https://registry.yarnpkg.com/make-dir/-/make-dir-3.1.0.tgz#415e967046b3a7f1d185277d84aa58203726a13f"
@@ -7195,6 +7214,11 @@ Lockfile:
       semver "^7.3.5"
       tar "^6.1.0"
       which "^2.0.2"
+  
+  node-modules-regexp@^1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/node-modules-regexp/-/node-modules-regexp-1.0.0.tgz#8d9dbe28964a4ac5712e9131642107c71e90ec40"
+    integrity sha1-jZ2+KJZKSsVxLpExZCEHxx6Q7EA=
   
   node-releases@^1.1.71:
     version "1.1.72"
@@ -7782,6 +7806,13 @@ Lockfile:
     version "2.0.4"
     resolved "https://registry.yarnpkg.com/pinkie/-/pinkie-2.0.4.tgz#72556b80cfa0d48a974e80e77248e80ed4f7f870"
     integrity sha1-clVrgM+g1IqXToDnckjoDtT3+HA=
+  
+  pirates@^4.0.0:
+    version "4.0.1"
+    resolved "https://registry.yarnpkg.com/pirates/-/pirates-4.0.1.tgz#643a92caf894566f91b2b986d2c66950a8e2fb87"
+    integrity sha512-WuNqLTbMI3tmfef2TKxlQmAiLHKtFhlsCZnPIpuv2Ow0RDVO8lfy1Opf4NUzlMXLjPl+Men7AuVdX6TA+s+uGA==
+    dependencies:
+      node-modules-regexp "^1.0.0"
   
   pkg-dir@^3.0.0:
     version "3.0.0"
@@ -8663,6 +8694,13 @@ Lockfile:
       tiny-invariant "^1.0.2"
       tiny-warning "^1.0.0"
   
+  react-router-sitemap@^1.2.0:
+    version "1.2.0"
+    resolved "https://registry.yarnpkg.com/react-router-sitemap/-/react-router-sitemap-1.2.0.tgz#4a32ddf7a1adbb3ad3c59a4e3e5338ca00b4febb"
+    integrity sha512-3aETwxCFTGHsGbXpyh7sr+c/WDr0q1rpng0M4pgoV6Owl3673buejPHGvzDmZEdiqhRa+I0znRDneKRc1NC06Q==
+    dependencies:
+      sitemap "^1.6.0"
+  
   react-router@5.2.0:
     version "5.2.0"
     resolved "https://registry.yarnpkg.com/react-router/-/react-router-5.2.0.tgz#424e75641ca8747fbf76e5ecca69781aa37ea293"
@@ -9390,6 +9428,14 @@ Lockfile:
     dependencies:
       is-arrayish "^0.3.1"
   
+  sitemap@^1.6.0:
+    version "1.13.0"
+    resolved "https://registry.yarnpkg.com/sitemap/-/sitemap-1.13.0.tgz#569cbe2180202926a62a266cd3de09c9ceb43f83"
+    integrity sha1-Vpy+IYAgKSamKiZs094Jyc60P4M=
+    dependencies:
+      underscore "^1.7.0"
+      url-join "^1.1.0"
+  
   slash@^3.0.0:
     version "3.0.0"
     resolved "https://registry.yarnpkg.com/slash/-/slash-3.0.0.tgz#6539be870c165adbd5240220dbe361f1bc4d4634"
@@ -9498,7 +9544,7 @@ Lockfile:
       source-map-url "^0.4.0"
       urix "^0.1.0"
   
-  source-map-support@~0.5.12, source-map-support@~0.5.19:
+  source-map-support@^0.5.16, source-map-support@~0.5.12, source-map-support@~0.5.19:
     version "0.5.19"
     resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.5.19.tgz#a98b62f86dcaf4f67399648c085291ab9e8fed61"
     integrity sha512-Wonm7zOCIJzBGQdB+thsPar0kYuCIzYvxZwlBa87yi/Mdjv7Tip2cyVbLj5o0cFPN4EVkuTwb3GDDyUx2DGnGw==
@@ -10252,6 +10298,11 @@ Lockfile:
       has-symbols "^1.0.2"
       which-boxed-primitive "^1.0.2"
   
+  underscore@^1.7.0:
+    version "1.13.1"
+    resolved "https://registry.yarnpkg.com/underscore/-/underscore-1.13.1.tgz#0c1c6bd2df54b6b69f2314066d65b6cde6fcf9d1"
+    integrity sha512-hzSoAVtJF+3ZtiFX0VgfFPHEDRm7Y/QPjGyNo4TVdnDTdft3tr8hEkD25a1jC+TjTuE7tkHGKkhwCgs9dgBB2g==
+  
   unicode-canonical-property-names-ecmascript@^1.0.4:
     version "1.0.4"
     resolved "https://registry.yarnpkg.com/unicode-canonical-property-names-ecmascript/-/unicode-canonical-property-names-ecmascript-1.0.4.tgz#2619800c4c825800efdd8343af7dd9933cbe2818"
@@ -10424,6 +10475,11 @@ Lockfile:
     version "0.0.1"
     resolved "https://registry.yarnpkg.com/url-join/-/url-join-0.0.1.tgz#1db48ad422d3402469a87f7d97bdebfe4fb1e3c8"
     integrity sha1-HbSK1CLTQCRpqH99l73r/k+x48g=
+  
+  url-join@^1.1.0:
+    version "1.1.0"
+    resolved "https://registry.yarnpkg.com/url-join/-/url-join-1.1.0.tgz#741c6c2f4596c4830d6718460920d0c92202dc78"
+    integrity sha1-dBxsL0WWxIMNZxhGCSDQySIC3Hg=
   
   url-loader@^4.1.1:
     version "4.1.1"

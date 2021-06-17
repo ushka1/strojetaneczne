@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 import styles from './Pricing.module.scss';
 import { connect } from 'react-redux';
 import Spinner from '../../components/UI/Spinner/Spinner';
@@ -81,18 +82,23 @@ class Pricing extends React.Component {
     }
 
     return (
-      <section className={styles.Container}>
-        <div ref={this.wrapperRef}>
-          <Heading>Cennik</Heading>
-          <p className={styles.Helper}>&larr; Przewiń &rarr;</p>
-          <div ref={this.tableRef} className={styles.Pricing}>
-            <ul className={styles.Table}>
-              {rozmiarowka}
-              {table}
-            </ul>
+      <>
+        <Helmet>
+          <title>Stroje Taneczne - cennik</title>
+        </Helmet>
+        <section className={styles.Container}>
+          <div ref={this.wrapperRef}>
+            <Heading>Cennik</Heading>
+            <p className={styles.Helper}>&larr; Przewiń &rarr;</p>
+            <div ref={this.tableRef} className={styles.Pricing}>
+              <ul className={styles.Table}>
+                {rozmiarowka}
+                {table}
+              </ul>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </>
     );
   }
 }

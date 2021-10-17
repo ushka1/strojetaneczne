@@ -15,7 +15,6 @@ const Offer = (props) => {
       onClick={() => {
         props.setPosition(window.pageYOffset);
         props.history.push({
-          // pathname: props.match.url + '/' + props.id,
           pathname: props.match.url + '/' + name,
         });
       }}

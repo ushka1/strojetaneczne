@@ -9,14 +9,71 @@
   }
 }
 
-.Banner {
-  --animation: slideIn 1s ease-out both;
-  --delay1: 0s;
-  --delay2: 0.3s;
-  --delay3: 0.6s;
-  --delay4: 0.8s;
+@keyframes jumpy {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-  a {
+.Banner {
+  position: relative;
+  --animation: slideIn 0.5s ease-out both;
+  --delay1: 0s;
+  --delay2: 0.2s;
+  --delay3: 0.4s;
+  --delay4: 0.6s;
+
+  .Bargain {
+    font-size: 2rem;
+    max-width: 400px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border: 3px dashed var(--purple1);
+    background-color: var(--purple2);
+    text-decoration: none;
+    color: black;
+    animation: jumpy 0.5s;
+    animation-iteration-count: 3;
+    animation-timing-function: ease-in-out;
+    transition: ease-in-out 0.2s;
+    animation-delay: 1.5s;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+
+    @include respond('medium') {
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin: auto;
+      margin-bottom: auto;
+      margin-right: auto;
+      bottom: initial;
+      right: initial;
+      padding: 0.5rem;
+      font-size: 1.6rem;
+      border-width: 2px;
+      animation: none;
+    }
+
+    i {
+      font-weight: 600;
+      color: var(--purple1);
+    }
+  }
+
+  .ScrollHandler {
     display: block;
     height: auto;
     width: auto;

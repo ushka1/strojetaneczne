@@ -26,17 +26,18 @@
     font-size: 2.5rem;
     color: var(--purple1);
     font-weight: 500;
+
     @include respond('small') {
       text-align: center;
     }
   }
 
-  .Description {
+  .Description,
+  .Bargain {
     margin: auto;
-    font-size: 2rem;
-    text-align: center;
     max-width: 50%;
-    margin-bottom: 5rem;
+    text-align: center;
+    font-size: 2rem;
 
     @include respond('big') {
       max-width: 70%;
@@ -46,6 +47,23 @@
     }
     @include respond('small') {
       max-width: 100%;
+    }
+  }
+
+  .Description {
+    margin-bottom: 2rem;
+  }
+
+  .Bargain {
+    padding: 1rem;
+    margin-bottom: 5rem;
+    border: 3px dashed var(--purple1);
+    background-color: var(--purple2);
+
+    i {
+      font-weight: 600;
+      color: var(--purple1);
+      margin: 0.25rem;
     }
   }
 
@@ -149,13 +167,6 @@
       }
     }
   }
-}
-
-.Capital {
-  font-weight: 600;
-  font-size: 3.25rem;
-  vertical-align: middle;
-  line-height: 1;
 }
 
 .shirt {

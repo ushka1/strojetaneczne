@@ -41,11 +41,12 @@ class Order extends React.Component {
             celu złożenia zamówienia, prosimy o postępowanie zgodnie z
             poniższymi krokami.
           </p>
+          <h5 className={styles.Bargain}>
+            W przypadku zamówienia <i>3</i> lub więcej przedmiotów, przewidziana
+            jest zniżka w wysokości <i>8%</i> obejmująca całe zamówienie.
+          </h5>
           <article className={styles.Legend}>
-            <h3>
-              <span className={styles.Capital}>1.</span> Do zamówienia prosimy o
-              podanie następujących wymiarów:
-            </h3>
+            <h3>1. Do zamówienia prosimy o podanie następujących wymiarów:</h3>
             <p>(Najedź myszką żeby podświetlić)</p>
             <ol start='1' ref={this.legendRef}>
               <li className='shirt'>koszula – 0, 1, 3, 4, 5, 6</li>
@@ -79,10 +80,7 @@ class Order extends React.Component {
           </article>
 
           <article className={styles.Contact}>
-            <h3>
-              <span className={styles.Capital}>2.</span> Po wykonaniu wymiarów
-              zapraszamy do złożenia zamówienia:
-            </h3>
+            <h3>2. Po wykonaniu wymiarów zapraszamy do złożenia zamówienia:</h3>
             <ul>
               <li>
                 <Mail></Mail>
@@ -101,8 +99,7 @@ class Order extends React.Component {
 
           <article className={styles.Delivery}>
             <h3>
-              <span className={styles.Capital}>3.</span> Termin realizacji
-              zamówienia wynosi od 7 do 10 dni roboczych.
+              3. Termin realizacji zamówienia wynosi od 7 do 10 dni roboczych.
             </h3>
             <p>Zamówienia doręczamy pocztą lub przez firmę kurierską.</p>
           </article>

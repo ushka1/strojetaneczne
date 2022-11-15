@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Banner.module.scss';
 import { ReactComponent as Down } from '../../../assets/icons/down.svg';
 
@@ -22,10 +21,10 @@ const Banner = () => {
 
   return (
     <section className={styles.Banner}>
-      <Link to='/zamowienia' className={styles.Bargain}>
+      {/* <Link to='/zamowienia' className={styles.Bargain}>
         Promocja, przy zamówieniu <i>3</i> lub więcej produktów, przysługuje{' '}
         <i>8%</i> zniżki.
-      </Link>
+      </Link> */}
       <h1 className={styles.Title}>Witamy na Anne Dance Studio :)</h1>
       <h2 className={styles.Subtitle}>
         Jesteśmy firmą krawiecką zajmującą się szyciem strojów do tańców

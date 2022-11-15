@@ -15,6 +15,8 @@ export function idToName(id) {
     12: 'spodnie_meskie_taniec_towarzyski',
     13: 'sukienka_taniec_towarzyski_koronka',
     14: 'sukienka_taniec_towarzyski_lycra',
+    15: 'sukienka_taniec_towarzyski_aksamit',
+    16: 'sukienka_taniec_towarzyski_krynolina',
   };
 
   if (!(id in hashTable)) {
@@ -41,6 +43,8 @@ export function nameToId(name) {
     spodnie_meskie_taniec_towarzyski: 12,
     sukienka_taniec_towarzyski_koronka: 13,
     sukienka_taniec_towarzyski_lycra: 14,
+    sukienka_taniec_towarzyski_aksamit: 15,
+    sukienka_taniec_towarzyski_krynolina: 16,
   };
 
   if (!(name in hashTable)) {
@@ -67,6 +71,8 @@ function getLengthsById(id) {
     12: 5,
     13: 8,
     14: 3,
+    15: 4,
+    16: 6,
   };
 
   if (!(id in hashTable)) {

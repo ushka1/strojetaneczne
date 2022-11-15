@@ -65,7 +65,7 @@ class Pricing extends React.Component {
         return (
           <ul key={product}>
             <li className={styles.title}>
-              {item.title.match(/Sukienka/)
+              {item.title.match(/^Sukienka (lycra|z koronką)$/)
                 ? podwojneKolo(item.title)
                 : item.title}
             </li>

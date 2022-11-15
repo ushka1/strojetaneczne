@@ -17,17 +17,6 @@ class Item extends React.Component {
     price: null,
   };
 
-  nonStandard1 = (data) => {
-    const pricesFrak = [
-      250, 250, 250, 250, 280, 280, 280, 300, 300, 300, 320, 320, 320, 320,
-    ];
-
-    this.setState({
-      data: data,
-      price: pricesFrak,
-    });
-  };
-
   // eslint-disable-next-line react/no-deprecated
   componentWillReceiveProps(nextProps) {
     const name = this.props.match.params.id;
@@ -44,11 +33,6 @@ class Item extends React.Component {
 
     const priceId = nextProps.items[id].price;
 
-    if (priceId === 'ns1') {
-      this.nonStandard1(nextProps.items[id]);
-      return;
-    }
-
     this.setState({
       data: nextProps.items[id],
       price: nextProps.prices[priceId].prices,
@@ -62,11 +46,6 @@ class Item extends React.Component {
       const id = nameToId(name);
 
       const priceId = this.props.items[id].price;
-
-      if (priceId === 'ns1') {
-        this.nonStandard1(this.props.items[id]);
-        return;
-      }
 
       this.setState({
         data: this.props.items[id],

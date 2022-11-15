@@ -1,10 +1,33 @@
 {
   "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    ".babelrc.json": false,
+    ".cspell.json": false,
+    ".eslintrc.json": false,
+    ".gitignore": false,
+    ".jestrc.json": false,
+    ".prettierignore": false,
+    "**/.vscode": false,
+    "**/node_modules": false,
+    "environment.d.ts": false,
+    "package.json": false,
+    "setupTests.js": false,
+    "tsconfig.json": false,
+    "webpack*": false,
+    "yarn.lock": false
+  },
+  "explorerExclude.backup": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
     "**/.DS_Store": true,
+    "**/Thumbs.db": true,
     ".babelrc.json": true,
     ".cspell.json": true,
     ".eslintrc.json": true,
@@ -19,6 +42,5 @@
     "tsconfig.json": true,
     "webpack*": true,
     "yarn.lock": true
-  },
-  "explorerExclude.backup": null
+  }
 }

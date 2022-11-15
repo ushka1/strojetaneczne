@@ -41,10 +41,10 @@ class Order extends React.Component {
             celu złożenia zamówienia, prosimy o postępowanie zgodnie z
             poniższymi krokami.
           </p>
-          <h5 className={styles.Bargain}>
+          {/* <h5 className={styles.Bargain}>
             W przypadku zamówienia <i>3</i> lub więcej przedmiotów, przewidziana
             jest zniżka w wysokości <i>8%</i> obejmująca całe zamówienie.
-          </h5>
+          </h5> */}
           <article className={styles.Legend}>
             <h3>1. Do zamówienia prosimy o podanie następujących wymiarów:</h3>
             <p>(Najedź myszką żeby podświetlić)</p>

@@ -17,6 +17,7 @@ export function idToName(id) {
     14: 'sukienka_taniec_towarzyski_lycra',
     15: 'sukienka_taniec_towarzyski_aksamit',
     16: 'sukienka_taniec_towarzyski_krynolina',
+    17: 'sukienka_taniec_towarzyski_koronka_krynolina',
   };
 
   if (!(id in hashTable)) {
@@ -45,6 +46,7 @@ export function nameToId(name) {
     sukienka_taniec_towarzyski_lycra: 14,
     sukienka_taniec_towarzyski_aksamit: 15,
     sukienka_taniec_towarzyski_krynolina: 16,
+    sukienka_taniec_towarzyski_koronka_krynolina: 17,
   };
 
   if (!(name in hashTable)) {
@@ -73,6 +75,7 @@ function getLengthsById(id) {
     14: 3,
     15: 4,
     16: 6,
+    17: 3,
   };
 
   if (!(id in hashTable)) {
